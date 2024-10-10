@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule for Project Task</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 10px;
+        }
+
+        .containar {
+            max-width: 600px;
+            /* margin: 0 auto; */
+            background-color: #fff;
+            padding: 20px;
+            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+            border-radius: 8px;
+            margin-left: 2;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #c24343b5;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background-color: #6595c9;
+            color: white;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 2400px;
+            margin: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 2px solid #644c56;
+        }
+
+        th, td {
+            padding: 4px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #dab1b1;
+        }
+
+        button {
+            margin-right: 10px;
+        }
+
+        .deleteRow {
+            background-color: #a3e532;
+            color: rgb(240, 43, 8);
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+     <h1 style="color:rgb(121, 64, 181);display: flex;">Project Task</h1>
+    <div class="containar">
+        <form id="scheduleForm">
+            <label for="projectName">Project Name:</label>
+            <input type="text" id="projectName" name="projectName" placeholder="project name" required>
+    
+            <label for="place">Place:</label>
+            <input type="text" id="place" name="place" placeholder="place" required>
+    
+            <button  style="background:rgb(88, 137, 159) ;width: 100%;" type="submit">Save Project</button>
+        </form>
+    
+        <table id="projectsTable">
+            <thead>
+                <tr>
+                    <th>Project Name</th>
+                    <th>Place</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Saved projects will appear here -->
+            </tbody>
+        </table>
+    </div>
+        <table id="taskTable">
+            <thead>
+                <tr id="headerRow1">
+                    <th>Task Name</th>
+                    <th>Project Leader</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Duration (Days)</th> <!-- Added "Duration" column -->
+                    <th colspan="4">Oct-24</th>
+                    <th colspan="4">Nov-24</th>
+                    <th colspan="4">Dec-24</th>
+                    <th colspan="4">Jan-25</th>
+                    <th colspan="4">Feb-25</th>
+                    <th colspan="4">Mar-25</th>
+                    <th colspan="4">Apr-25</th>
+                    <th colspan="4">May-25</th>
+                    <th colspan="4">Jun-25</th>
+                    <th colspan="4">Jul-25</th>
+                    <th colspan="4">Aug-25</th>
+                    <th colspan="4">Sep-25</th>
+                    <th colspan="4">Oct-25</th>
+                    <th colspan="4">Nov-25</th>
+                    <th colspan="4">Dec-25</th>
+                    <th colspan="4">Jan-26</th>
+                    <th colspan="4">Feb-26</th>
+                    <th colspan="4">Mar-26</th>
+                    <th colspan="4">Arl-26</th>
+                    <th colspan="4">May-26</th>
+                    
+                   
+                </tr>
+                <tr id="headerRow2">
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th> <!-- Empty "Duration" header for week rows -->
+                    <th>Week 1</th>
+                    <th>Week 2</th>
+                    <th>Week 3</th>
+                    <th>Week 4</th>
+                    <th>Week 1</th>
+                    <th>Week 2</th>
+                    <th>Week 3</th>
+                    <th>Week 4</th>
+                    <th>Week 1</th>
+                    <th>Week 2</th>
+                    <th>Week 3</th>
+                    <th>Week 4</th>
+                    <th>Week 1</th>
+                    <th>Week 2</th>
+                    <th>Week 3</th>
+                    <th>Week 4</th>
+                    <th>Week 1</th>
+                    <th>Week 2</th>
+                    <th>Week 3</th>
+                    <th>Week 4</th>
+                    <th>Week 1</th>
+                    <th>Week 2</th>
+                    <th>Week 3</th>
+                    <th>Week 4</th>
+                    <th>Week 1</th>
+                    <th>Week 2</th>
+                    <th>Week 3</th>
+                    <th>Week 4</th>
+                    <th>Week 1</th>
+                    <th>Week 2</th>
+                    <th>Week 3</th>
+                    <th>Week 4</th>
+                    <th>Week 1</th>
+                    <th>Week 2</th>
+                    <th>Week 3</th>
+                    <th>Week 4</th>
+                    <th>Week 1</th>
+                    <th>Week 2</th>
+                    <th>Week 3</th>
+                    <th>Week 4</th>
+                    <th>Week 1</th>
+                    <th>Week 2</th>
+                    <th>Week 3</th>
+                    <th>Week 4</th>
+                    <th>Week 1</th>
+                    <th>Week 2</th>
+                    <th>Week 3</th>
+                    <th>Week 4</th>
+                    <th>Week 1</th>
+                    <th>Week 2</th>
+                    <th>Week 3</th>
+                    <th>Week 4</th>
+                    <th>Week 1</th>
+                    <th>Week 2</th>
+                    <th>Week 3</th>
+                    <th>Week 4</th>
+                    <th>Week 1</th>
+                    <th>Week 2</th>
+                    <th>Week 3</th>
+                    <th>Week 4</th>
+                    <th>Week 1</th>
+                    <th>Week 2</th>
+                    <th>Week 3</th>
+                    <th>Week 4</th>
+                    <th>Week 1</th>
+                    <th>Week 2</th>
+                    <th>Week 3</th>
+                    <th>Week 4</th>
+                    <th>Week 1</th>
+                    <th>Week 2</th>
+                    <th>Week 3</th>
+                    <th>Week 4</th>
+                    <th>Week 1</th>
+                    <th>Week 2</th>
+                    <th>Week 3</th>
+                    <th>Week 4</th>
+                    <th>Week 1</th>
+                    <th>Week 2</th>
+                    <th>Week 3</th>
+                    <th>Week 4</th>
+                    
+                    
+                    
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <button id="addRow">Add Row</button>
+        <button id="saveData">Save Data</button>
+        <button id="addColumn">Add Column</button> <!-- Button to add columns dynamically -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            let monthCounter = 3; // Start after the initial 3 months (Oct-Dec 24)
+
+            // Load data from localStorage
+            if (localStorage.getItem('tableData')) {
+                $('#taskTable tbody').html(localStorage.getItem('tableData'));
+            }
+
+            // Add row functionality
+            $('#addRow').click(function() {
+                let newRow = `<tr>
+                                <td><input type="text" placeholder="Task Name"></td>
+                                <td><input type="text" placeholder="Project Leader"></td>
+                                <td><input type="date" class="startDate"></td>
+                                <td><input type="date" class="endDate"></td>
+                                <td><input type="text" placeholder="Duration"></td>`; // Duration column added
+
+                $('#headerRow2 th').each(function(index) {
+                    if (index >= 5) { // Skip the first 5 columns (Task Name, Leader, Start Date, End Date, Duration)
+                        newRow += `<td><textarea style="height: 50px;" placeholder=""></textarea></td>`;
+                    }
+                });
+
+                newRow += `<td><button class="deleteRow">Delete</button></td></tr>`;
+                $('#taskTable tbody').append(newRow);
+            });
+
+            // Save data to localStorage
+            $('#saveData').click(function() {
+                const tableData = $('#taskTable tbody').html();
+                localStorage.setItem('tableData', tableData);
+                alert("Data saved!");
+            });
+
+            // Delete row functionality
+            $(document).on('click', '.deleteRow', function() {
+                $(this).closest('tr').remove();
+            });
+
+            // Add column functionality
+            $('#addColumn').click(function() {
+                monthCounter++;
+                let newMonth = `Month ${monthCounter}`;
+
+                // Add new month header with 4 weeks
+                $('#headerRow1').append(`<th colspan="100">${newMonth}</th>`);
+                $('#headerRow2').append(`
+                    <th>Week 1</th>
+                    <th>Week 2</th>
+                    <th>Week 3</th>
+                    <th>Week 4</th>
+                `);
+
+                // Append new columns (4 new week cells) to each row
+                $('#taskTable tbody tr').each(function() {
+                    $(this).append(`
+                        <td><textarea style="height: 50px;" placeholder=""></textarea></td>
+                        <td><textarea style="height: 50px;" placeholder=""></textarea></td>
+                        <td><textarea style="height: 50px;" placeholder=""></textarea></td>
+                        <td><textarea style="height: 50px;" placeholder=""></textarea></td>
+                         <td><textarea style="height: 50px;" placeholder=""></textarea></td>
+                    `);
+                });
+            });
+
+            // Update duration when start and end dates change
+            $(document).on('change', '.startDate, .endDate', function() {
+                let $row = $(this).closest('tr');
+                let startDate = $row.find('.startDate').val();
+                let endDate = $row.find('.endDate').val();
+
+                if (startDate && endDate) {
+                    let start = new Date(startDate);
+                    let end = new Date(endDate);
+                    let duration = Math.ceil((end - start) / (1000 * 60 * 60 * 24)); // Calculate duration in days
+
+                    if (duration >= 0) {
+                        $row.find('.duration').text(duration);
+                    } else {
+                        $row.find('.duration').text('Invalid');
+                    }
+                }
+            });
+            
+        });
+
+
+
+
+
+
+       $(document).ready(function() {
+    const $scheduleForm = $('#scheduleForm');
+    const $projectsTableBody = $('#projectsTable tbody');
+
+    // Load saved data from localStorage
+    loadData();
+
+    // Handle form submission
+    $scheduleForm.on('submit', function(event) {
+        event.preventDefault();
+
+        const projectName = $('#projectName').val();
+        const place = $('#place').val();
+
+        // Add the new project to the table
+        const newRow = $(`
+            <tr>
+                <td>${projectName}</td>
+                <td>${place}</td>
+                <td><button class="delete-btn">Delete</button></td>
+            </tr>
+        `);
+        $projectsTableBody.append(newRow);
+
+        // Clear the form fields
+        $scheduleForm[0].reset();
+
+        // Add delete functionality to the new row
+        newRow.find('.delete-btn').on('click', function() {
+            $(this).closest('tr').remove();
+            saveData(); // Save the updated data
+        });
+
+        // Save the updated data to localStorage
+        saveData();
+    });
+
+   // Function to save data to localStorage
+    function saveData() {
+        let projects = [];
+        $projectsTableBody.find('tr').each(function() {
+            const projectName = $(this).find('td:nth-child(1)').text();
+            const place = $(this).find('td:nth-child(2)').text();
+            projects.push(`${projectName}|${place}`);
+        });
+
+        localStorage.setItem('projects', projects.join(';'));  // Store as a semicolon-separated string
+    }
+
+    // Function to load data from localStorage
+    function loadData() {
+        const savedProjects = localStorage.getItem('projects');
+
+        if (savedProjects) {
+            const projectsArray = savedProjects.split(';');  // Split the saved string back into individual project data
+
+            projectsArray.forEach(projectData => {
+                const [projectName, place] = projectData.split('|');
+                
+                const newRow = $(`
+                    <tr>
+                        <td>${projectName}</td>
+                        <td>${place}</td>
+                        <td><button class="delete-btn">Delete</button></td>
+                    </tr>
+                `);
+                $projectsTableBody.append(newRow);
+
+                // Add delete functionality to the loaded row
+                newRow.find('.delete-btn').on('click', function() {
+                    $(this).closest('tr').remove();
+                    saveData(); // Save the updated data
+                });
+            });
+        }
+    }
+});
+
+        
+    </script>
+</body>
+</html>
